@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+    <link href="/assests/logo.jpg" rel="icon">
+    <link href="/assests/logo.jpg" rel="apple-touch-icon">
+
+    <title id="pageTitle">Unique Industry - Premium Home Textiles</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- <link rel="stylesheet" href="homestyle.css"> -->
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="/home page/style.css">
+
+</head>
+
+<body>
+    <!-- Social Media Label Section -->
+    <div style="position: fixed; top: 190px; left: 0; z-index: 9999; background-color: #547cff; color: white; padding: 10px 5px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; transition: all 0.3s ease; display: flex; align-items: center; font-family: 'Poppins', sans-serif; font-weight: 500; cursor: pointer;"
+        onmouseover="document.getElementById('socialLinks').style.display='flex';"
+        onmouseout="document.getElementById('socialLinks').style.display='none';">
+
+        <!-- Social Icons (hidden by default, visible on hover) -->
+        <div id="socialLinks"
+            style="display: none; flex-direction: column; align-items: center; gap: 5px; margin-right: 10px;">
+            <a href="#linkedin" target="_blank"
+                style="color: white; display: flex; justify-content: center; align-items: center; width: 25px; height: 25px; background-color: black; border-radius: 8px; font-size: 12px; transition: all 0.3s ease;">
+                <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="#instagram" target="_blank"
+                style="color: white; display: flex; justify-content: center; align-items: center; width: 25px; height: 25px; background-color: black; border-radius: 8px; font-size: 12px; transition: all 0.3s ease;">
+                <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#facebook" target="_blank"
+                style="color: white; display: flex; justify-content: center; align-items: center; width: 25px; height: 25px; background-color: black; border-radius: 8px; font-size: 12px; transition: all 0.3s ease;">
+                <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#youtube" target="_blank"
+                style="color: white; display: flex; justify-content: center; align-items: center; width: 25px; height: 25px; background-color: black; border-radius: 8px; font-size: 12px; transition: all 0.3s ease;">
+                <i class="bx bxl-youtube"></i>
+            </a>
+        </div>
+
+        <!-- Follow Us Text (always visible) -->
+        <span id="followText"
+            style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 14px; font-weight:bold">Follow
+            Us</span>
+    </div>
+
+    <div class="container">
+        <div class="navbar">
+            <div class="desktop-nav">
+                <img src="/assests/logo.jpg" alt="unique industry logo" class="logo">
+                <h4>Unique Industry</h4>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Nav (Dropdown box for mobile screens) -->
+            <div class="mobile-nav">
+                <div class="drop-down">
+                    <button class="drop-toggle">☰</button>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="../Home_page/home.html">Home</a></li>
+                        <li><a href="../About_page/about.html">About</a></li>
+                        <li><a href="../Product_page/product.html">Products</a></li>
+                        <li><a href="../Contact_page/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+        </div>
+    </div>
+
+</body>
+</html>
