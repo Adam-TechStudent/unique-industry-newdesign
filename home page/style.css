@@ -41,6 +41,7 @@ body {
 .navbar .desktop-nav img {
     width: 50px;
     height: 50px;
+    padding-left: 100px;
 }
 
 h4 {
@@ -55,7 +56,7 @@ h4 {
     width: 80%;
     list-style: none;
     align-items: center;
-    gap: 25px;
+    gap: 55px;
     justify-content: flex-end;
 }
 
@@ -89,15 +90,52 @@ h4 {
 
 .industry-box {
     width: 82%;
-    height: 500px;
+    height: 550px;
     position: absolute;
     top: 45%;
     left: 8%;
     transform: translateY(-50%);
     z-index: 2;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border: 4px solid #fff;
+}
+
+.industry-text {
+    width: 40%;
+    height: 250px;
+    position: absolute;
+    top: 25%;
+    left: 28%;
+    z-index: 3;
     background: rgba(255, 255, 255, 0.85);
     padding: 20px;
     border-radius: 10px;
+}
+
+.industry-text h4 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 200;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.industry-text h2 {
+    font-size: 120px;
+    text-align: center;
+    font-weight: 100;
+    color: #ce1a1a;
+    margin-bottom: 5px;
+}
+
+hr {
+  border: none;   
+              
+  border-top: 2px solid #333; 
+  margin: 20px 0;             
+  width: 100%;                 
 }
 
 .box {
