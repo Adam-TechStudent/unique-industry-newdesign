@@ -1,0 +1,168 @@
+/* Premium Architecture & Typography Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Didot", "Playfair Display", "Times New Roman", serif; /* Luxury Serif Header Base */
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #f7f7f5; /* Off-white linen color tone */
+  color: #111111;
+  padding: 100px 0;
+}
+
+.lookbook-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Lookbook Header */
+.lookbook-header {
+  margin-bottom: 80px;
+  max-width: 700px;
+}
+
+.collection-tag {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #888884;
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.lookbook-header h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.lookbook-header p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  color: #555552;
+  line-height: 1.6;
+}
+
+/* Dynamic Grid System */
+.fabric-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px 40px;
+}
+
+@media (min-width: 768px) {
+  .fabric-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .fabric-showcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Premium Fabric Item Card */
+.fabric-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+/* Image Container Frame with Hover Zoom */
+.image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Portrait fashion editorial crop */
+  overflow: hidden;
+  background-color: #ebebe8;
+  margin-bottom: 24px;
+}
+
+.fabric-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fabric-card:hover .fabric-image {
+  transform: scale(1.04); /* Subtle, elegant dynamic zoom */
+}
+
+/* Fabric Text Information Overlay */
+.fabric-meta-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.fabric-sku {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #999995;
+  margin-bottom: 6px;
+}
+
+.fabric-name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.fabric-details {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: #666662;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+/* Interaction Call-To-Action Layout */
+.fabric-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn-action {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  flex: 1;
+  padding: 14px 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 1px solid #111111;
+  background: transparent;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-action.primary {
+  background: #111111;
+  color: #ffffff;
+}
+
+.btn-action:hover {
+  background: #222222;
+  color: #ffffff;
+  border-color: #222222;
+}
+
+.btn-action.secondary:hover {
+  background: #111111;
+  color: #ffffff;
+}
