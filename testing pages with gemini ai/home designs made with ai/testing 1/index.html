@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelaVibe Textiles | Premium Fabrics & Sustainable Manufacturing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-yarn logo-icon"></i>
+                <span>TelaVibe</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#about">Our Legacy</a>
+                <a href="#products">Products</a>
+                <a href="#sustainability">Sustainability</a>
+                <a href="#contact" class="btn-nav">Get a Quote</a>
+            </nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Weaving Innovation <br><span>Into Every Thread</span></h1>
+            <p>From sustainable raw fibers to premium luxury fabrics. We supply global fashion brands with unparalleled textile engineering.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">Explore Fabrics</a>
+                <a href="#about" class="btn btn-secondary">Our Process</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Collections</h2>
+                <p>Discover the diverse range of high-quality textiles crafted with precision.</p>
+            </div>
+            
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-filter="all">All Fabrics</button>
+                <button class="tab-btn" data-filter="organic">Organic Cotton</button>
+                <button class="tab-btn" data-filter="luxury">Luxury Silks</button>
+                <button class="tab-btn" data-filter="industrial">Industrial/Technical</button>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-category="organic">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?auto=format&fit=crop&w=600&q=80" alt="Organic Cotton">
+                    </div>
+                    <div class="product-info">
+                        <h3>Earthy Organic Cotton</h3>
+                        <p>100% GOTS certified sustainable cotton for everyday comfort.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="luxury">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Mulberry Silk">
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Mulberry Silk</h3>
+                        <p>High-sheen, ultra-smooth premium silk for luxury apparel.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="industrial">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1524294104255-95561b3cd335?auto=format&fit=crop&w=600&q=80" alt="Technical Textile">
+                    </div>
+                    <div class="product-info">
+                        <h3>High-Tensile Canvas</h3>
+                        <p>Engineered synthetic blend for high durability and outdoor applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="slider-container">
+                <div class="testimonial-slide active">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p>"TelaVibe has completely transformed our supply chain. Their commitment to sustainable cotton and uniform quality batch-after-batch is unmatched."</p>
+                    <h4>— Elena Rostova, Production Director at EcoWear Co.</h4>
+                </div>
+                <div class="testimonial-slide">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p>"The texture and dye retention of their Mulberry Silk collection elevated our evening-wear line to a whole new level of luxury."</p>
+                    <h4>— Marcus Vance, Lead Designer at Vance Apparel</h4>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 TelaVibe Textiles. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

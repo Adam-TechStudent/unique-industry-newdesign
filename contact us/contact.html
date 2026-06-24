@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <i class="fa-solid fa-sun icon-sun"></i>
+                <i class="fa-solid fa-moon icon-moon"></i>
+            </div>
+        </label>
+    </div>
+
+    <div class="container">
+        <div class="contact-box">
+            <div class="contact-info">
+                <div>
+                    <h2>Let's connect</h2>
+                    <p class="subtitle">We'd love to hear from you. Leave us a message!</p>
+                    
+                    <div class="info-links">
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>123 Innovation Way, Tech City</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+1 (555) 019-2834</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>hello@yourbrand.com</span>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6175402517224!2d-73.98785312341905!3d40.74844047138908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" autocomplete="off" novalidate>
+                    <input type="hidden" name="access_key" value="778c1719-8969-4d35-91cd-17a827c8a9a2">
+                    
+                    <h2>Send a Message</h2>
+                    
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name</label>
+                        <span class="error-msg">Name is required</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                        <span class="error-msg">Enter a valid email</span>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Your Message</label>
+                        <span class="error-msg">Message cannot be empty</span>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+                        <span>Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+
+                <div id="successMessage" class="success-card hidden">
+                    <div class="success-icon">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                    <button id="backBtn">Send another message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="contactscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+/* --- Soft Minimalist Editorial Design Palette --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-creme: #FDFBF7;        /* Calming warm milk/porcelain */
+    --text-charcoal: #2A2825;   /* Soft warm charcoal instead of harsh black */
+    --accent-terracotta: #C9826B; /* Soft clay pink highlight yarn */
+    --muted-sand: #EFECE4;      /* Background cards and soft containers */
+    --muted-taupe: #8E8A82;     /* Secondary soft text elements */
+    --transition-fluid: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-creme);
+    color: var(--text-charcoal);
+}
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Soft Glassmorphic Header Navigation --- */
+.luxury-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(253, 251, 247, 0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(42, 40, 37, 0.04);
+    padding: 20px 6%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.brand-logo {
+    font-family: 'Italiana', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: var(--text-charcoal);
+    text-decoration: none;
+}
+
+.brand-logo span {
+    font-size: 0.65rem;
+    font-family: 'Instrument Sans', sans-serif;
+    letter-spacing: 2px;
+    margin-left: 5px;
+    color: var(--muted-taupe);
+}
+
+.center-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--text-charcoal);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    position: relative;
+    transition: var(--transition-fluid);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-terracotta);
+    transition: var(--transition-fluid);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cta-pill {
+    background-color: var(--text-charcoal);
+    color: var(--bg-creme);
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    transition: var(--transition-fluid);
+}
+
+.cta-pill:hover {
+    background-color: var(--accent-terracotta);
+}
+
+/* --- Silk Wave Fluid Hero Section --- */
+.fluid-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 6% 60px 6%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    gap: 60px;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.fine-badge {
+    background-color: var(--muted-sand);
+    color: var(--muted-taupe);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.hero-text-block h1 {
+    font-family: 'Italiana', serif;
+    font-size: 4.2rem;
+    line-height: 1.15;
+    font-weight: 400;
+    margin: 25px 0;
+    letter-spacing: -1px;
+}
+
+.hero-text-block h1 .serif-italic {
+    font-style: italic;
+    color: var(--accent-terracotta);
+}
+
+.hero-p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--muted-taupe);
+    max-width: 540px;
+    margin-bottom: 40px;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--text-charcoal);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.arrow-wrap {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(42, 40, 37, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-fluid);
+}
+
+.explore-btn:hover .arrow-wrap {
+    background-color: var(--accent-terracotta);
+    border-color: var(--accent-terracotta);
+    color: var(--bg-creme);
+    transform: translateY(4px);
+}
+
+/* Visual Block Floating Canvases */
+.organic-frame-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.main-canvas {
+    width: 75%;
+    height: 85%;
+    border-radius: 120px 20px 120px 20px; /* Fluid woven frame design */
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 30px 60px rgba(142,138,130,0.12);
+}
+
+.sub-canvas {
+    width: 50%;
+    height: 55%;
+    border-radius: 20px 80px 20px 80px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 12px solid var(--bg-creme);
+    box-shadow: 0 20px 40px rgba(142,138,130,0.15);
+}
+
+.main-canvas img, .sub-canvas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Smooth drifting animations */
+.animate-float { animation: floatY 6s ease-in-out infinite; }
+.accent-float { animation: floatYInverse 6s ease-in-out infinite; }
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+@keyframes floatYInverse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+}
+
+/* --- The Loom Interactive Vault --- */
+.loom-section {
+    padding: 120px 6%;
+    background-color: #F8F5EE; /* Slightly deeper tone to highlight products */
+    border-top: 1px solid rgba(42, 40, 37, 0.04);
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.sub-heading {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--accent-terracotta);
+    font-weight: 600;
+}
+
+.section-intro h2 {
+    font-family: 'Italiana', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.section-intro p {
+    color: var(--muted-taupe);
+    font-size: 1rem;
+}
+
+.loom-interactive-container {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.fiber-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fiber-card {
+    background-color: var(--bg-creme);
+    padding: 25px 30px;
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    border: 1px solid transparent;
+    transition: var(--transition-fluid);
+}
+
+.fiber-num {
+    font-family: 'Italiana', serif;
+    font-size: 1.5rem;
+    color: var(--accent-terracotta);
+    opacity: 0.6;
+}
+
+.fiber-title-group h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.fiber-tag {
+    font-size: 0.8rem;
+    color: var(--muted-taupe);
+}
+
+/* Interactive Active Fiber Selection Styling */
+.fiber-card:hover {
+    border-color: rgba(201, 130, 107, 0.3);
+}
+
+.fiber-card.active {
+    background-color: var(--text-charcoal);
+    color: var(--bg-creme);
+    transform: translateX(10px);
+}
+
+.fiber-card.active .fiber-tag {
+    color: rgba(253, 251, 247, 0.6);
+}
+
+/* Vault Windows Target Display */
+.vault-window {
+    background-color: var(--bg-creme);
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 40px 80px rgba(42,40,37,0.05);
+}
+
+.window-canvas-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#vault-master-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vault-window:hover #vault-master-img {
+    transform: scale(1.03);
+}
+
+.vault-metadata-card {
+    padding: 30px 10px 10px 10px;
+}
+
+.meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.meta-label {
+    color: var(--muted-taupe);
+}
+
+.meta-val {
+    font-weight: 500;
+}
+
+.meta-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--muted-sand);
+    margin: 18px 0;
+}
+
+.meta-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #5C5852;
+}
+
+/* --- Warm Organic Footer Layout --- */
+.organic-footer {
+    background-color: var(--text-charcoal);
+    color: var(--bg-creme);
+    padding: 80px 6% 40px 6%;
+}
+
+.footer-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.footer-main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-brand-side h2 {
+    font-family: 'Italiana', serif;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.footer-brand-side p {
+    color: rgba(253, 251, 247, 0.6);
+    font-weight: 300;
+}
+
+.footer-links-side {
+    display: flex;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.link-group h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-terracotta);
+    margin-bottom: 20px;
+}
+
+.link-group a, .link-group p {
+    display: block;
+    color: rgba(253, 251, 247, 0.6);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    font-weight: 300;
+}
+
+.link-group a:hover {
+    color: var(--bg-creme);
+}
+
+.footer-bottom-row {
+    border-top: 1px solid rgba(253, 251, 247, 0.08);
+    padding-top: 30px;
+    font-size: 0.85rem;
+    color: rgba(253, 251, 247, 0.4);
+}
+
+/* --- Fluid Screen Resizers --- */
+@media(max-width: 968px) {
+    .center-nav { display: none; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-text-block h1 { font-size: 2.8rem; }
+    .loom-interactive-container { grid-template-columns: 1fr; }
+    .organic-frame-container { height: 450px; }
+    .footer-links-side { gap: 40px; }
+}

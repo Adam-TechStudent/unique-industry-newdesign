@@ -116,38 +116,39 @@
     </div>
 
     <div class="container">
-        <div class="navbar">
-            <div class="desktop-nav">
-                <img src="/assests/logo.jpg" alt="unique industry logo" class="logo" />
-                
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <!-- Mobile Nav (Dropdown box for mobile screens) -->
-            <div class="mobile-nav">
-                <div class="drop-down">
-                    <button class="drop-toggle">☰</button>
-                    <ul class="mobile-dropdown-menu">
-                        <li><a href="../Home_page/home.html">Home</a></li>
-                        <li><a href="../About_page/about.html">About</a></li>
-                        <li><a href="../Product_page/product.html">Products</a></li>
-                        <li><a href="../Contact_page/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="menu-toggle" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
+
 
         <div class="textile-bg">
-            <img src="/assests/bg-textile4.jpg" alt="textile background image"/>
+            <div class="navbar">
+                <div class="desktop-nav">
+                    <img src="/assests/logo.jpg" alt="unique industry logo" class="logo" />
+
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="/contact us/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile Nav (Dropdown box for mobile screens) -->
+                <div class="mobile-nav">
+                    <div class="drop-down">
+                        <button class="drop-toggle">☰</button>
+                        <ul class="mobile-dropdown-menu">
+                            <li><a href="../Home_page/home.html">Home</a></li>
+                            <li><a href="../About_page/about.html">About</a></li>
+                            <li><a href="../Product_page/product.html">Products</a></li>
+                            <li><a href="../Contact_page/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-toggle" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <img src="/assests/bg-textile4.jpg" alt="textile background image" />
             <div class="industry-box">
                 <div class="industry-text">
                     <h2>UNIQUE</h2>
@@ -158,8 +159,8 @@
             </div>
         </div>
 
-        
-         
+
+
 
         <div class="box">
             <div class="box1">
@@ -172,7 +173,61 @@
                 <img src="/assests/textile3.jpg" alt="textile image 3" />
             </div>
         </div>
+
+
+        <!-- FIXED CONTACT SECTION -->
+        <section id="contact">
+            <h2 class="section-title" data-translate="contact-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 data-translate="contact-info">Contact Information</h3>
+                    <div class="contact-item">
+                        <div>info@iqraindustries.com</div>
+                    </div>
+                    <div class="contact-item">
+                        <div>+91 98765 43210</div>
+                    </div>
+                </div>
+
+                <!-- ✅ FIXED: Added id="contactForm" and name attributes -->
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="user_name" data-translate-placeholder="name-placeholder"
+                            placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="user_email" data-translate-placeholder="email-placeholder"
+                            placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" data-translate-placeholder="subject-placeholder"
+                            placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" data-translate-placeholder="message-placeholder"
+                            placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-translate="send-message">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="footer-container">
+                <p data-translate="footer">&copy; 2026 Iqra Industries. All rights reserved. | Premium Home Textiles
+                    Manufacturer & Exporter</p>
+                <nav>
+                    <ul id="footer-menu">
+                        <li><a href="../Home_page/home.html" data-translate="nav-home">Home</a></li>
+                        <li><a href="../About_page/about.html" data-translate="nav-about">About</a></li>
+                        <li><a href="../Contact_page/contact.html" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
     </div>
+
 </body>
 
 </html>

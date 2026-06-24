@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O L E A | Fine Organic Interlacing</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fluid Elegant Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Soft Glassmorphic Top Navigation -->
+    <header class="luxury-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">OLEA<span>STUDIO</span></a>
+            <nav class="center-nav">
+                <a href="#heritage" class="nav-link">Heritage</a>
+                <a href="#gallery" class="nav-link">The Loom</a>
+                <a href="#curations" class="nav-link">Curations</a>
+            </nav>
+            <div class="nav-right">
+                <a href="#contact" class="cta-pill">Request Lookbook</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Silk Wave Fluid Hero Section -->
+    <section id="heritage" class="fluid-hero">
+        <div class="hero-grid">
+            <div class="hero-text-block">
+                <div class="badge-row">
+                    <span class="fine-badge">Premium Mill Traceable</span>
+                </div>
+                <h1>Fabrics that breathe <br><span class="serif-italic">with timeless grace.</span></h1>
+                <p class="hero-p">Crafting ultra-fine natural yarns, curated wool blends, and raw organic linens for houses that value quiet luxury and honest craftsmanship.</p>
+                <div class="hero-actions">
+                    <a href="#gallery" class="explore-btn">Discover Texture <span class="arrow-wrap"><i class="fa-solid fa-arrow-down-long"></i></span></a>
+                </div>
+            </div>
+            
+            <div class="hero-visual-block">
+                <!-- Overlapping Organic Framed Canvases -->
+                <div class="organic-frame-container">
+                    <div class="main-canvas animate-float">
+                        <img src="https://images.unsplash.com/photo-1545048702-79362596cdc9?auto=format&fit=crop&w=1200&q=80" alt="Soft flowing natural luxury cotton yarn">
+                    </div>
+                    <div class="sub-canvas accent-float">
+                        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80" alt="Raw textured weaving linen">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Thread Inspector Vault -->
+    <section id="gallery" class="loom-section">
+        <div class="section-intro">
+            <span class="sub-heading">THE CHRONICLES OF LOOM</span>
+            <h2>Sensory Tactile Curations</h2>
+            <p>Click a fiber below to inspect its unique thread weight, weave characteristics, and lineage.</p>
+        </div>
+
+        <div class="loom-interactive-container">
+            <!-- Sidebar Selection Cards -->
+            <div class="fiber-deck">
+                <div class="fiber-card active" data-img="https://images.unsplash.com/photo-1606744838346-7b39921e1029?auto=format&fit=crop&w=900&q=80" data-weight="210 GSM" data-origin="Flemish Valley" data-desc="An open, highly breathable mesh pattern designed specifically for hot-climate drape garments and home dressings.">
+                    <span class="fiber-num">01</span>
+                    <div class="fiber-title-group">
+                        <h3>Ethereal Open-Weave Linen</h3>
+                        <span class="fiber-tag">Raw Plant Fiber</span>
+                    </div>
+                </div>
+
+                <div class="fiber-card" data-img="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=900&q=80" data-weight="380 GSM" data-origin="Australian Southern Downs" data-desc="Spun from incredibly fine 16-micron fibers, offering an ultra-soft, pill-resistant finish with beautiful natural elasticity.">
+                    <span class="fiber-num">02</span>
+                    <div class="fiber-title-group">
+                        <h3>Superfine Merino Twill</h3>
+                        <span class="fiber-tag">Animal Luxury Blend</span>
+                    </div>
+                </div>
+
+                <div class="fiber-card" data-img="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=80" data-weight="180 GSM" data-origin="Zhejiang Highlands" data-desc="Pure high-luster filament silk woven meticulously on traditional narrow width looms to ensure unparalleled edge integrity.">
+                    <span class="fiber-num">03</span>
+                    <div class="fiber-title-group">
+                        <h3>Raw Spun Mulberry Silk</h3>
+                        <span class="fiber-tag">Organic Filament</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Master Display Window -->
+            <div class="vault-window">
+                <div class="window-canvas-wrapper">
+                    <img id="vault-master-img" src="https://images.unsplash.com/photo-1606744838346-7b39921e1029?auto=format&fit=crop&w=900&q=80" alt="Active premium textile fiber selection">
+                </div>
+                <div class="vault-metadata-card">
+                    <div class="meta-row">
+                        <span class="meta-label">Density Weight</span>
+                        <span id="meta-weight" class="meta-val">210 GSM</span>
+                    </div>
+                    <div class="meta-row">
+                        <span class="meta-label">Provenance</span>
+                        <span id="meta-origin" class="meta-val">Flemish Valley</span>
+                    </div>
+                    <hr class="meta-divider">
+                    <p id="meta-desc" class="meta-description">An open, highly breathable mesh pattern designed specifically for hot-climate drape garments and home dressings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warm Organic Footer -->
+    <footer id="contact" class="organic-footer">
+        <div class="footer-inner">
+            <div class="footer-main-row">
+                <div class="footer-brand-side">
+                    <h2>OLEA</h2>
+                    <p>Weaving balance back into raw spaces.</p>
+                </div>
+                <div class="footer-links-side">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="#">The Mills</a>
+                        <a href="#">Sustainability Map</a>
+                        <a href="#">Yarn Index</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Studio Connection</h4>
+                        <p>hello@oleatextiles.design</p>
+                        <p>+39 (02) 893-4410</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-row">
+                <p>&copy; 2026 OLEA Studio. Curated consciously.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
