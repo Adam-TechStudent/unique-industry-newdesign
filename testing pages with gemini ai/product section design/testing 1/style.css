@@ -1,168 +1,222 @@
-/* Premium Architecture & Typography Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Didot", "Playfair Display", "Times New Roman", serif; /* Luxury Serif Header Base */
-  -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: #f7f7f5; /* Off-white linen color tone */
-  color: #111111;
-  padding: 100px 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #fdf4f4 45%, #e8cfcf 100%); /* Warm ivory canvas */
+    color: #2b2927;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }
 
-.lookbook-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
+/* Widescreen 3-Column Layout Base */
+.widescreen-showcase-wrapper {
+    display: grid;
+    grid-template-columns: 240px 1fr 240px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    gap: 40px;
+    padding: 0 20px;
 }
 
-/* Lookbook Header */
-.lookbook-header {
-  margin-bottom: 80px;
-  max-width: 700px;
+/* Left Sidebar - Fabric Index Track */
+.sidebar-rack {
+    border-right: 1px solid #eae7e2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
 }
 
-.collection-tag {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #888884;
-  display: block;
-  margin-bottom: 12px;
-  font-weight: 500;
+.rack-header {
+    margin-bottom: 40px;
+}
+.rack-header span { font-size: 0.8rem; color: #a39c93; font-weight: 500;}
+.rack-header p { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-top: 5px; }
+
+.fabric-index-list {
+    list-style: none;
 }
 
-.lookbook-header h2 {
-  font-size: 3.5rem;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
-  line-height: 1.1;
+.index-item {
+    font-size: 0.9rem;
+    padding: 12px 0;
+    color: #b5ae00;
+    color: #a39c93;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
 }
 
-.lookbook-header p {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  color: #555552;
-  line-height: 1.6;
+.index-item.active {
+    color: #1a1918;
+    font-weight: 600;
+    padding-left: 15px;
 }
 
-/* Dynamic Grid System */
-.fabric-showcase {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 60px 40px;
+/* Little accent dot for active text item */
+.index-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #8c857b;
+    border-radius: 50%;
 }
 
-@media (min-width: 768px) {
-  .fabric-showcase {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* Center Frame Stage */
+.center-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-@media (min-width: 1200px) {
-  .fabric-showcase {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.section-tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8c857b;
+    margin-bottom: 8px;
 }
 
-/* Premium Fabric Item Card */
-.fabric-card {
-  display: flex;
-  flex-direction: column;
-  background: transparent;
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 24px;
 }
 
-/* Image Container Frame with Hover Zoom */
-.image-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4; /* Portrait fashion editorial crop */
-  overflow: hidden;
-  background-color: #ebebe8;
-  margin-bottom: 24px;
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 560px; 
+    border-radius: 24px;
+    overflow: hidden; 
+    box-shadow: 0 30px 70px rgba(43, 41, 39, 0.1);
 }
 
-.fabric-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform-origin: bottom center; 
+    transform: rotate(-65deg);
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
 }
 
-.fabric-card:hover .fabric-image {
-  transform: scale(1.04); /* Subtle, elegant dynamic zoom */
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Fabric Text Information Overlay */
-.fabric-meta-block {
-  display: flex;
-  flex-direction: column;
+.carousel-slide.active { opacity: 1; transform: rotate(0deg); z-index: 2; }
+.carousel-slide.exit { opacity: 0; transform: rotate(65deg); z-index: 1; }
+
+/* Overlaid Premium Info Card Details */
+.product-details-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: left;
+    transition: opacity 0.4s ease;
 }
 
-.fabric-sku {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #999995;
-  margin-bottom: 6px;
+.product-details-card.fade-out { opacity: 0; }
+.card-header { display: flex; justify-content: space-between; align-items: baseline; }
+.card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; }
+#product-price { font-size: 1rem; font-weight: 500; color: #5c564f; }
+.card-divider { height: 1px; background: rgba(0, 0, 0, 0.06); margin: 12px 0; }
+.made-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #a39c93; margin-bottom: 2px; }
+#product-made { font-size: 0.8rem; line-height: 1.4; color: #5c564f; }
+
+/* Right Sidebar - Specifications & Decorative Loop Axis */
+.sidebar-details-panel {
+    border-left: 1px solid #eae7e2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
 }
 
-.fabric-name {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: #111111;
-  margin-bottom: 4px;
+.spec-block {
+    margin-bottom: 30px;
 }
 
-.fabric-details {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 0.85rem;
-  color: #666662;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
+.spec-block span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #a39c93;
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* Interaction Call-To-Action Layout */
-.fabric-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: auto;
+.spec-block p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #2b2927;
 }
 
-.btn-action {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  flex: 1;
-  padding: 14px 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  border: 1px solid #111111;
-  background: transparent;
-  color: #111111;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
+/* Visual representation of a clockwise dynamic dial */
+.circular-axis-indicator {
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #eae7e2;
+    border-radius: 50%;
+    margin-top: 20px;
+    position: relative;
+    animation: spinClockwise 10s linear infinite;
 }
 
-.btn-action.primary {
-  background: #111111;
-  color: #ffffff;
+.spinning-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #a39c93;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.btn-action:hover {
-  background: #222222;
-  color: #ffffff;
-  border-color: #222222;
+@keyframes spinClockwise {
+    100% { transform: rotate(360deg); }
 }
 
-.btn-action.secondary:hover {
-  background: #111111;
-  color: #ffffff;
+/* Responsive Fallback: stacks components on smaller tablet/mobile layouts */
+@media (max-width: 900px) {
+    .widescreen-showcase-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 30px;
+    }
+    .sidebar-rack, .sidebar-details-panel {
+        display: none; /* Focus solely on center view for smaller screens */
+    }
 }

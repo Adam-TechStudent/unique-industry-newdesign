@@ -1,57 +1,55 @@
-// Pure Design Objects focusing strictly on fabric parameters and aesthetic tags
-const collections = [
-  {
-    id: 'tex-01',
-    name: 'Raw Herringbone Tweed',
-    sku: 'HBN-0912',
-    specs: '100% Virgin Wool • Heavyweight Blend',
-    image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'tex-02',
-    name: 'Slubbed Belgian Linen',
-    sku: 'LIN-4401',
-    specs: '100% Flax • Textured Oatmeal Weave',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 'tex-03',
-    name: 'Structured Ottoman Rib',
-    sku: 'OTM-8831',
-    specs: 'Cotton Silk Blend • Matte Cord Finish',
-    image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80'
-  }
-];
-
-const showcaseGrid = document.getElementById('fabric-showcase');
-
-// Generate Cards
-collections.forEach(fabric => {
-  const cardElement = document.createElement('div');
-  cardElement.className = 'fabric-card';
-
-  cardElement.innerHTML = `
-    <div class="image-frame">
-      <img src="${fabric.image}" alt="${fabric.name}" class="fabric-image" loading="lazy">
-    </div>
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indexItems = document.querySelectorAll(".index-item");
+    const detailsCard = document.querySelector(".product-details-card");
     
-    <div class="fabric-meta-block">
-      <span class="fabric-sku">Ref. ${fabric.sku}</span>
-      <h3 class="fabric-name">${fabric.name}</h3>
-      <p class="fabric-details">${fabric.specs}</p>
-    </div>
+    const nameElem = document.getElementById("product-name");
+    const priceElem = document.getElementById("product-price");
+    const madeElem = document.getElementById("product-made");
 
-    <div class="fabric-actions">
-      <button class="btn-action secondary" onclick="handleInquiry('${fabric.name}', 'Swatch')">Order Swatch</button>
-      <button class="btn-action primary" onclick="handleInquiry('${fabric.name}', 'Production')">Production Run</button>
-    </div>
-  `;
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // Loop every 5 seconds
 
-  showcaseGrid.appendChild(cardElement);
+    function rotateShowcase() {
+        // 1. Image rotation transitions
+        const exitingSlide = slides[currentSlideIndex];
+        exitingSlide.classList.remove("active");
+        exitingSlide.classList.add("exit");
+
+        // UI text fade stage
+        detailsCard.classList.add("fade-out");
+
+        // Clear out old active indicators on left track list
+        indexItems[currentSlideIndex].classList.remove("active");
+
+        setTimeout(() => {
+            exitingSlide.classList.remove("exit");
+        }, 1200);
+
+        // 2. Step forward inside the array circle
+        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+        const incomingSlide = slides[currentSlideIndex];
+
+        // 3. Update the left side vertical text indicator
+        indexItems[currentSlideIndex].classList.add("active");
+
+        // 4. Populate content changes
+        const nextName = incomingSlide.getAttribute("data-name");
+        const nextPrice = incomingSlide.getAttribute("data-price");
+        const nextMade = incomingSlide.getAttribute("data-made");
+
+        setTimeout(() => {
+            nameElem.textContent = nextName;
+            priceElem.textContent = nextPrice;
+            madeElem.textContent = nextMade;
+            detailsCard.classList.remove("fade-out");
+        }, 350);
+
+        // 5. Fire entry rotation arc
+        incomingSlide.classList.add("active");
+    }
+
+    // Set interactive engine
+    setInterval(rotateShowcase, intervalTime);
 });
-
-// Clean interaction logging placeholder
-function handleInquiry(fabricName, type) {
-  console.log(`B2B Portal: Initialized ${type} request workflow for "${fabricName}".`);
-  alert(`Your ${type} request process for ${fabricName} has been initialized.`);
-}

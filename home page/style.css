@@ -163,10 +163,11 @@ hr {
 }
 
 .box {
-    height: 400px;
+    height: 800px;
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
     justify-content: center;
@@ -212,6 +213,51 @@ hr {
 }
 
 .box3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box4 {
+    height: 400px;
+    width: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.box4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box5 {
+    height: 400px;
+    width: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.box5 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.box6 {
+    height: 400px;
+    width: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    border: 1px solid #fff;
+}
+
+.box6 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -495,4 +541,261 @@ button[type="submit"]:hover {
     .map-container {
         height: 150px;
     }
+}
+
+
+
+/* Widescreen 3-Column Layout Base */
+.widescreen-showcase-wrapper {
+    display: grid;
+    grid-template-columns: 240px 1fr 240px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 800px;
+    gap: 40px;
+    padding: 0 20px;
+    margin: 80px 140px;
+}
+
+/* Left Sidebar - Fabric Index Track */
+.sidebar-rack {
+    border-right: 1px solid #eae7e2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.rack-header {
+    margin-bottom: 40px;
+}
+.rack-header span { font-size: 0.8rem; color: #a39c93; font-weight: 500;}
+.rack-header p { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-top: 5px; }
+
+.fabric-index-list {
+    list-style: none;
+}
+
+.index-item {
+    font-size: 0.9rem;
+    padding: 12px 0;
+    color: #b5ae00;
+    color: #a39c93;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.index-item.active {
+    color: #1a1918;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+/* Little accent dot for active text item */
+.index-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #8c857b;
+    border-radius: 50%;
+}
+
+/* Center Frame Stage */
+.center-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #8c857b;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 560px; 
+    border-radius: 24px;
+    overflow: hidden; 
+    box-shadow: 0 30px 70px rgba(43, 41, 39, 0.1);
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform-origin: bottom center; 
+    transform: rotate(-65deg);
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-slide.active { opacity: 1; transform: rotate(0deg); z-index: 2; }
+.carousel-slide.exit { opacity: 0; transform: rotate(65deg); z-index: 1; }
+
+/* Overlaid Premium Info Card Details */
+.product-details-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: left;
+    transition: opacity 0.4s ease;
+}
+
+.product-details-card.fade-out { opacity: 0; }
+.card-header { display: flex; justify-content: space-between; align-items: baseline; }
+.card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; }
+#product-price { font-size: 1rem; font-weight: 500; color: #5c564f; }
+.card-divider { height: 1px; background: rgba(0, 0, 0, 0.06); margin: 12px 0; }
+.made-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #a39c93; margin-bottom: 2px; }
+#product-made { font-size: 0.8rem; line-height: 1.4; color: #5c564f; }
+
+/* Right Sidebar - Specifications & Decorative Loop Axis */
+.sidebar-details-panel {
+    border-left: 1px solid #eae7e2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+}
+
+.spec-block {
+    margin-bottom: 30px;
+}
+
+.spec-block span {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #a39c93;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.spec-block p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #2b2927;
+}
+
+/* Visual representation of a clockwise dynamic dial */
+.circular-axis-indicator {
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #eae7e2;
+    border-radius: 50%;
+    margin-top: 20px;
+    position: relative;
+    animation: spinClockwise 10s linear infinite;
+}
+
+.spinning-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #a39c93;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spinClockwise {
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Fallback: stacks components on smaller tablet/mobile layouts */
+@media (max-width: 900px) {
+    .widescreen-showcase-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 30px;
+    }
+    .sidebar-rack, .sidebar-details-panel {
+        display: none; /* Focus solely on center view for smaller screens */
+    }
+}
+
+
+
+
+/* Ensure the container is the structural anchor */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 500px; /* Adjust height based on your layout */
+}
+
+/* Hide all slides by default and stack them */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease-in-out, transform 1.2s ease-in-out;
+    z-index: 1;
+}
+
+/* The active slide is visible and sits on top */
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+    transform: scale(1);
+}
+
+/* The exiting slide fades out smoothly below the active one */
+.carousel-slide.exit {
+    opacity: 0;
+    visibility: visible;
+    z-index: 1;
+}
+
+/* Optional: Text fade effect for the card */
+.product-details-card {
+    transition: opacity 0.35s ease;
+    opacity: 1;
+}
+.product-details-card.fade-out {
+    opacity: 0;
 }

@@ -1,4 +1,117 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indexItems = document.querySelectorAll(".index-item");
+    const detailsCard = document.querySelector(".product-details-card");
+    
+    const nameElem = document.getElementById("product-name");
+    const priceElem = document.getElementById("product-price");
+    const madeElem = document.getElementById("product-made");
+
+    let currentSlideIndex = 0;
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // Loop every 5 seconds
+    let showcaseInterval;
+
+    function goToSlide(nextIndex) {
+        // 1. Setup variables for outgoing and incoming slides
+        const exitingSlide = slides[currentSlideIndex];
+        const incomingSlide = slides[nextIndex];
+
+        // 2. Trigger exit animation states
+        exitingSlide.classList.remove("active");
+        exitingSlide.classList.add("exit");
+        indexItems[currentSlideIndex].classList.remove("active");
+        detailsCard.classList.add("fade-out");
+
+        // Clean up the exit class after animation finishes
+        const oldIndex = currentSlideIndex;
+        setTimeout(() => {
+            slides[oldIndex].classList.remove("exit");
+        }, 1200);
+
+        // 3. Update index tracker to the new slide
+        currentSlideIndex = nextIndex;
+
+        // 4. Update UI indicator active state
+        indexItems[currentSlideIndex].classList.add("active");
+
+        // 5. Gather data from incoming slide
+        const nextName = incomingSlide.getAttribute("data-name");
+        const nextPrice = incomingSlide.getAttribute("data-price");
+        const nextMade = incomingSlide.getAttribute("data-made");
+
+        // 6. Swap content halfway through the fade
+        setTimeout(() => {
+            nameElem.textContent = nextName;
+            priceElem.textContent = nextPrice;
+            madeElem.textContent = nextMade;
+            detailsCard.classList.remove("fade-out");
+        }, 350);
+
+        // 7. Reveal incoming slide
+        incomingSlide.classList.add("active");
+    }
+
+    function rotateShowcase() {
+        const nextIndex = (currentSlideIndex + 1) % totalSlides;
+        goToSlide(nextIndex);
+    }
+
+    // --- Interactive Sidebar Click Engine ---
+    indexItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const targetIndex = parseInt(item.getAttribute("data-index"), 10);
+            
+            // Do nothing if they click the already active item
+            if (targetIndex === currentSlideIndex) return;
+
+            // Stop the auto-timer, switch slides, restart the timer
+            clearInterval(showcaseInterval);
+            goToSlide(targetIndex);
+            startAutoRotation(); 
+        });
+    });
+
+    // --- Interval Controller Engine ---
+    function startAutoRotation() {
+        showcaseInterval = setInterval(rotateShowcase, intervalTime);
+    }
+
+    // Fire engine
+    startAutoRotation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const successCard = document.getElementById("successMessage");
     const backBtn = document.getElementById("backBtn");
@@ -71,3 +184,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
      
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

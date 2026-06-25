@@ -1,28 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Textile Lookbook Selection</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Textile Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <section class="textile-lookbook">
-    <div class="lookbook-container">
-      
-      <div class="lookbook-header">
-        <span class="collection-tag">Seasonal Milling / Vol. I</span>
-        <h2>The Textile Archive</h2>
-        <p>Premium architectural fabrics, curated weaves, and custom dye-lot runs engineered for commercial manufacturing and interior spaces.</p>
-      </div>
-
-      <div class="fabric-showcase" id="fabric-showcase">
+    <main class="widescreen-showcase-wrapper">
+        
+        <div class="sidebar-rack">
+            <div class="rack-header">
+                <span>01 — 06</span>
+                <p>ARCHIVE</p>
+            </div>
+            <ul class="fabric-index-list">
+                <li class="index-item active" data-index="0">Linen</li>
+                <li class="index-item" data-index="1">Cotton</li>
+                <li class="index-item" data-index="2">Wool</li>
+                <li class="index-item" data-index="3">Silk</li>
+                <li class="index-item" data-index="4">Denim</li>
+                <li class="index-item" data-index="5">Trouser</li>
+            </ul>
         </div>
 
-    </div>
-  </section>
+        <div class="center-stage">
+            <span class="section-tagline">Curated Fabric Stories</span>
+            <h2 class="section-title">The Artisanal Collection</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-slide active" data-name="Premium Linen Blazer" data-price="$185" data-made="Woven from 100% natural flax fibers, sun-bleached and stonewashed for an exceptionally soft texture.">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=600" alt="Linen">
+                </div>
+                <div class="carousel-slide" data-name="Organic Cotton Knit" data-price="$95" data-made="Crafted from hand-harvested organic cotton, spun into high-gauge yarn using zero-waste techniques.">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=600" alt="Cotton">
+                </div>
+                <div class="carousel-slide" data-name="Heritage Merino Wool" data-price="$240" data-made="Responsibly sourced from certified ethical farms, spun and dyed with plant-based pigments.">
+                    <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=600" alt="Wool">
+                </div>
+                <div class="carousel-slide" data-name="The Bespoke Silk Shirt" data-price="$160" data-made="Woven using high-density Mulberry silk threads on traditional shuttle looms for an unmatched liquid drape.">
+                    <img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=600" alt="Silk">
+                </div>
+                <div class="carousel-slide" data-name="Selvedge Denim Jacket" data-price="$210" data-made="Slowly loomed on vintage denim machinery, deeply saturated in natural indigo baths.">
+                    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=600" alt="Denim">
+                </div>
+                <div class="carousel-slide" data-name="Tailored Wool Trouser" data-price="$175" data-made="Constructed from mid-weight worsted wool with reinforced canvas backing for structural elegance.">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?q=80&w=600" alt="Trouser">
+                </div>
 
-  <script src="script.js"></script>
+                <div class="product-details-card">
+                    <div class="card-header">
+                        <h3 id="product-name">Premium Linen Blazer</h3>
+                        <span id="product-price">$185</span>
+                    </div>
+                    <div class="card-divider"></div>
+                    <div class="card-body">
+                        <p class="made-label">How it's made</p>
+                        <p id="product-made">Woven from 100% natural flax fibers, sun-bleached and stonewashed for an exceptionally soft texture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-details-panel">
+            <div class="spec-block">
+                <span>AVAILABILITY</span>
+                <p>Limited Run (50 Pcs)</p>
+            </div>
+            <div class="spec-block">
+                <span>SHIPPING</span>
+                <p>Worldwide Eco-Package</p>
+            </div>
+            <div class="circular-axis-indicator">
+                <div class="spinning-dot"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
