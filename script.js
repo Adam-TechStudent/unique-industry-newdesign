@@ -140,14 +140,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: { 'Accept': 'application/json' }
                 });
 
-                if (response.ok) {
-                    form.classList.add("hidden");
-                    successCard.classList.remove("hidden");
+                // Parse the JSON response from Web3Forms to capture specific messages
+                const data = await response.json();
+
+                if (response.ok && data.success) {
+                    // 1. Alert for successful sending
+                    alert("Success! Your message has been sent successfully.");
+                    
+                    // Clear the input fields so it's ready for a new message
+                    form.reset(); 
+                    
+                    // REMOVED THE HIDDEN/SHOW LINES FROM HERE
                 } else {
-                    alert("Something went wrong. Please check your setup or try again.");
+                    // 2. Alert showing the error message returned from the server
+                    alert("Failed: " + (data.message || "Something went wrong. Please try again."));
                 }
             } catch (error) {
-                alert("Network error. Could not send message.");
+                // 3. Alert showing network/critical failures
+                alert("Network error: " + error.message + ". Failed to send the message.");
             } finally {
                 // Revert button styling
                 submitBtn.disabled = false;
@@ -156,12 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
-
-     
 });
-
-
-
 
 
 

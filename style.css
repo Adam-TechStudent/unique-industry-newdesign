@@ -152,7 +152,7 @@ h4 {
     text-align: center;
     font-weight: 100;
     color: #ce1a1a;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 hr {
@@ -625,7 +625,7 @@ button[type="submit"]:hover {
 }
 
 .hidden {
-    display: none !important;
+    display: none ;
 }
 
 @keyframes fadeIn {
@@ -656,4 +656,15 @@ button[type="submit"]:hover {
 }
 
 
+footer{
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    align-content: flex-end;
+    background-color: #5442e6;
+    justify-content: center;
+}
 
