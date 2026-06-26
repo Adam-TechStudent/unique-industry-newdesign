@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #fdf4f4 45%, #e8cfcf 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    
+}
+
+/* Optional: For Webkit browsers like Chrome/Safari */
+::-webkit-scrollbar {
+    width: 0px;
+    /* Hides the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+    /* Optional: Make the scrollbar thumb invisible */
+}
+
+
+
+.product-section{
+   display: flex;
+}
+
+.container{
+    margin: 25px;
+}
+
+
+.collection{
+    gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+li{
+    width: 100px;
+    height: 100px;
+    gap: 20px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.container2{
+    width: 88%;
+     
+    display: flex;
+    border: 2px solid rgb(255, 0, 0);
+}
