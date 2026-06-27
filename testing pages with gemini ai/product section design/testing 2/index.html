@@ -60,120 +60,26 @@
     <div class="product-section">
 
         <div class="container">
-            <ul class="collection">
-                <li>Linen</li>
-                <li>Cotton</li>
-                <li>Wool</li>
-                <li>Silk</li>
-                <li>Denim</li>
-                <li>Trouser</li>
-            </ul>
+            <div class="collection">
+                <button class="menu-btn active" onclick="filterCategory('all', this)">All Products</button>
+                <button class="menu-btn" onclick="filterCategory('linen', this)">Linen</button>
+                <button class="menu-btn" onclick="filterCategory('cotton', this)">Cotton</button>
+                <button class="menu-btn" onclick="filterCategory('wool', this)">Wool</button>
+                <button class="menu-btn" onclick="filterCategory('silk', this)">Silk</button>
+                <button class="menu-btn" onclick="filterCategory('denim', this)">Denim</button>
+                <button class="menu-btn" onclick="filterCategory('trouser', this)">Trouser</button>
+            </div>
         </div>
 
         <div class="container2">
-            <div class="cotton">
-                <div class="box1" id="box1">
-                    <img src="/assests/textile1.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 1</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box2">
-                    <img src="/assests/bg-textile2.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 2</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box3">
-                    <img src="/assests/bg-textile3.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 3</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box4">
-                    <img src="/assests/bg-textile4.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 4</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box5">
-                    <img src="/assests/bg-textile5.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 5</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box6">
-                    <img src="/assests/bg-textiles.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 6</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box7">
-                    <img src="/assests/textile.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 7</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box8">
-                    <img src="/assests/textile2.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 8</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
-                <div class="box1" id="box9">
-                    <img src="/assests/textile2.jpg" alt="just testing out image">
-                    <div class="sticky-box">
-                        <span>Cotton name 9</span>
-                        <hr>
-                        <span>Made with fine cotton and natural </span>
-                        <hr>
-                        <span>price $100 </span>
-                        <button type="submit">Order now</button>
-                    </div>
-                </div>
+            <div class="main-content">
+                <h1 id="category-title">All Products</h1>
+                <div class="products-grid" id="products-container"></div>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
