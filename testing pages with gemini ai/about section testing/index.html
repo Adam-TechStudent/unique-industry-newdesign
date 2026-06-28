@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | InterLoom Textiles</title>
+    <style>
+        /* --- Reset & Variables --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #4A3E3D;      /* Deep Earthy Brown */
+            --secondary: #8C7A6B;    /* Muted Linen */
+            --accent: #D1A17B;       /* Warm Thread Gold */
+            --bg-light: #FDFBF7;     /* Soft Off-White */
+            --text-dark: #2A2421;    /* Charcoal Charcoal */
+            --transition: all 0.4s ease;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 60vh;
+            background: linear-gradient(rgba(42, 36, 33, 0.7), rgba(42, 36, 33, 0.7)), 
+                        url('https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--accent);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        /* --- Our Story Section --- */
+        .story-section {
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .story-img {
+            flex: 1;
+            position: relative;
+        }
+
+        .story-img img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .story-content h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        .story-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* --- Interactive Values Counter Section --- */
+        .values-section {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .value-card h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Scroll Reveal Animation Utility --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Keyframes --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .story-section {
+                flex-direction: column;
+                padding: 50px 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Crafting Tomorrow's Fabric</h1>
+            <p>Interweaving generation-old traditions with modern, sustainable innovation.</p>
+        </div>
+    </header>
+
+    <section class="story-section reveal">
+        <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80" alt="Weaving loom close up">
+        </div>
+        <div class="story-content">
+            <h2>Our Journey</h2>
+            <p>Founded in 1994, InterLoom began as a boutique weaving workshop with a singular goal: to build high-quality, long-lasting textiles that honor the environment. Over the decades, we've scaled our operations without losing our artisanal soul.</p>
+            <p>Today, we proudly supply sustainably sourced cotton, intricate jacquards, and performance smart-textiles to global fashion houses and eco-conscious creators alike.</p>
+        </div>
+    </section>
+
+    <section class="values-section reveal">
+        <h2>What Drives Us</h2>
+        <p style="color: var(--secondary);">The pillars that hold our threads together.</p>
+        
+        <div class="values-grid">
+            <div class="value-card" onclick="alert('We trace 100% of our yarn from seed to shelf.')">
+                <h3>01. Traceability</h3>
+                <p>Every single thread has a birth certificate. We partner directly with ethical farmers.</p>
+            </div>
+            <div class="value-card" onclick="alert('Our zero-waste machinery re-loops water and fabric scraps.')">
+                <h3>02. Eco-Innovation</h3>
+                <p>From closed-loop water systems to solar-powered looms, sustainability is stitched into our DNA.</p>
+            </div>
+            <div class="value-card" onclick="alert('Our master weavers boast over 20+ years of technical heritage.')">
+                <h3>03. Uncompromised Quality</h3>
+                <p>We blend legacy artisanal techniques with microscopic quality checks to guarantee longevity.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150; // Trigger point
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        // Attach event listener for scrolling
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Initial check on page load to reveal top elements
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>
