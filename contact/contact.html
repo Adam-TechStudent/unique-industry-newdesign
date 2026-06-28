@@ -4,11 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+
+    <!-- Favicons -->
+    <link href="/assests/logo.jpg" rel="icon" />
+    <link href="/assests/logo.jpg" rel="apple-touch-icon" />
+
     <link rel="stylesheet" href="contactstyle.css">
+
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+
+        <div class="navbar">
+        <div class="desktop-nav">
+            <img src="/assests/logo.jpg" alt="unique industry logo" class="logo" />
+            <h2 class="company-name">Unique Industry</h2>
+
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="/product/index.html">Product</a></li>
+                <li><a href="/contact/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Mobile Nav (Dropdown box for mobile screens) -->
+        <div class="mobile-nav">
+            <div class="drop-down">
+                <button class="drop-toggle">☰</button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about/index.html">About</a></li>
+                    <li><a href="/product/index.html">Products</a></li>
+                    <li><a href="/contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
     <div class="theme-toggle-wrapper">
         <label class="theme-switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
@@ -33,7 +75,7 @@
                         </div>
                         <div class="info-item">
                             <i class="fa-solid fa-phone"></i>
-                            <span>+1 (555) 019-2834</span>
+                            <span>+91 90960 08355</span>
                         </div>
                         <div class="info-item">
                             <i class="fa-solid fa-envelope"></i>

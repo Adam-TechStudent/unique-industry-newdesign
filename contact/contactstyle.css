@@ -32,17 +32,77 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    overflow-x: hidden;
 }
 
 body {
     background: var(--bg-body);
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
     position: relative;
 }
+
+
+
+.navbar {
+    padding: 0 50px;
+
+    width: 100%;
+    height: 100px;
+}
+
+.desktop-nav {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar .desktop-nav img {
+    height: 50px;
+    padding-left: 100px;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    padding-left: 30px;
+}
+
+.nav-links {
+    display: flex;
+    width: 58%;
+    list-style: none;
+    align-items: center;
+    gap: 55px;
+    justify-content: flex-end;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.company-name{
+    padding: 10px;
+    color: #ffffff;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
 
 /* --- Theme Switch Toggle UI --- */
 .theme-toggle-wrapper {

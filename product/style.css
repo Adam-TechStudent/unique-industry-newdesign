@@ -73,6 +73,12 @@ h4 {
     transition: all 0.3s ease-in-out;
 }
 
+.company-name{
+    width: 350px;
+    font-size: 24px;
+    padding: 20px;
+}
+
 .mobile-nav {
     display: none;
 }
@@ -91,11 +97,7 @@ h1 {
 
 }
 
-.company-name{
-    width: 350px;
-    font-size: 32px;
-    padding: 20px;
-}
+
 
 
 
