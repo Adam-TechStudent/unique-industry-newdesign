@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+    <link href="/assests/logo.jpg" rel="icon" />
+    <link href="/assests/logo.jpg" rel="apple-touch-icon" />
+
+    <title>About Us | InterLoom Textiles</title>
+
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link rel="stylesheet" href="style.css">
+
+<body>
+
+
+    <header class="hero">
+        <div class="navbar">
+            <div class="desktop-nav">
+                <img src="/assests/logo.jpg" alt="unique industry logo" class="logo" />
+                <h2 class="company-name">Unique Industry</h2>
+
+                <ul class="nav-links">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about/index.html">About Us</a></li>
+                    <li><a href="/product/index.html">Products</a>
+                    </li>
+                    <li><a href="/contact us/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Mobile Nav (Dropdown box for mobile screens) -->
+            <div class="mobile-nav">
+                <div class="drop-down">
+                    <button class="drop-toggle">☰</button>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="../Home_page/home.html">Home</a></li>
+                        <li><a href="../About_page/about.html">About</a></li>
+                        <li><a href="../Product_page/product.html">Products</a></li>
+                        <li><a href="../Contact_page/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Crafting Tomorrow's Fabric</h1>
+            <p>Interweaving generation-old traditions with modern, sustainable innovation.</p>
+        </div>
+    </header>
+
+    <section class="story-section reveal">
+        <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
+                alt="Weaving loom close up">
+        </div>
+        <div class="story-content">
+            <h2>Our Journey</h2>
+            <p>Founded in 1994, InterLoom began as a boutique weaving workshop with a singular goal: to build
+                high-quality, long-lasting textiles that honor the environment. Over the decades, we've scaled our
+                operations without losing our artisanal soul.</p>
+            <p>Today, we proudly supply sustainably sourced cotton, intricate jacquards, and performance smart-textiles
+                to global fashion houses and eco-conscious creators alike.</p>
+        </div>
+    </section>
+
+    <section class="values-section reveal">
+        <h2>What Drives Us</h2>
+        <p style="color: var(--secondary);">The pillars that hold our threads together.</p>
+
+        <div class="values-grid">
+            <div class="value-card" onclick="alert('We trace 100% of our yarn from seed to shelf.')">
+                <h3>01. Traceability</h3>
+                <p>Every single thread has a birth certificate. We partner directly with ethical farmers.</p>
+            </div>
+            <div class="value-card" onclick="alert('Our zero-waste machinery re-loops water and fabric scraps.')">
+                <h3>02. Eco-Innovation</h3>
+                <p>From closed-loop water systems to solar-powered looms, sustainability is stitched into our DNA.</p>
+            </div>
+            <div class="value-card" onclick="alert('Our master weavers boast over 20+ years of technical heritage.')">
+                <h3>03. Uncompromised Quality</h3>
+                <p>We blend legacy artisanal techniques with microscopic quality checks to guarantee longevity.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Iqra Industries. All rights reserved. | Premium Home Textiles
+                Manufacturer & Exporter</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
