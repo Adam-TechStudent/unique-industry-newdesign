@@ -92,9 +92,99 @@ h4 {
 }
 
 
-
-.mobile-nav {
+.mobile-nav{
     display: none;
+}
+ 
+/* Base styles for the dropdown wrapper */
+.drop-down {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hide the menu by default */
+.mobile-dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1000;
+}
+
+
+/* This is what the JavaScript triggers. It MUST be 'display: block' (or flex) */
+.mobile-dropdown-menu.active {
+    display: block !important; /* Adding !important temporarily helps test if it's an override issue */
+}
+
+/* Simple list item styling */
+.mobile-dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.mobile-dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+@media (max-width: 375px) {
+    .desktop-nav{
+        display: none;
+    }
+
+    .mobile-nav{
+        display: flex;
+    }
+
+    .container .textile-bg .navbar .mobile-nav img{
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
+
+    .container .textile-bg .navbar .mobile-nav .drop-down{
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: 265px;
+    }
+
+    .drop-down .drop-toggle{
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+    
+    .drop-down .mobile-dropdown-menu {
+        background-color: #fff;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .drop-down .mobile-dropdown-menu li{
+        padding: 10px;
+    }
+
+    .drop-down .mobile-dropdown-menu li a {
+        text-decoration: none;
+    }
+
+
 }
 
 
@@ -673,3 +763,6 @@ footer{
     justify-content: center;
 }
 
+
+
+ 
