@@ -29,7 +29,7 @@ body {
     background: linear-gradient(135deg, #ffffff 0%, #fdf4f4 45%, #e8cfcf 100%);
     font-family: 'Poppins', sans-serif;
     color: #000;
-    
+
 }
 
 /* Optional: For Webkit browsers like Chrome/Safari */
@@ -92,98 +92,144 @@ h4 {
 }
 
 
-.mobile-nav{
+/* --- 2. Mobile Navigation Layout (Hidden on Desktop) --- */
+.mobile-nav {
     display: none;
+    /* Hidden by default */
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    position: relative;
 }
- 
-/* Base styles for the dropdown wrapper */
+
 .drop-down {
     position: relative;
-    display: inline-block;
 }
 
-/* Hide the menu by default */
+.drop-toggle {
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #222;
+    line-height: 1;
+    width: 150px;
+}
+
 .mobile-dropdown-menu {
-    display: none; 
-    position: absolute;
-    top: 100%;
+    display: none;
+    position: fixed;
     left: 0;
-    background-color: #fff;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    right: 0;
+    top: 60px;
+    /* Aligns break-out menu directly under mobile bar */
+    width: 100vw;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #eee;
     list-style: none;
-    padding: 10px;
-    margin: 0;
-    min-width: 150px;
-    z-index: 1000;
+    z-index: 999;
 }
 
-
-/* This is what the JavaScript triggers. It MUST be 'display: block' (or flex) */
 .mobile-dropdown-menu.active {
-    display: block !important; /* Adding !important temporarily helps test if it's an override issue */
-}
-
-/* Simple list item styling */
-.mobile-dropdown-menu li {
-    padding: 8px 12px;
+    display: block;
+    text-align: center;
 }
 
 .mobile-dropdown-menu li a {
+    display: block;
+    padding: 16px 24px;
+    color: #444;
     text-decoration: none;
-    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #f8f9fa;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.mobile-dropdown-menu li a:hover {
+    background-color: #f1f3f5;
+    color: #007bff;
+}
+
+/* Hiding the extra placeholder menu-toggle */
+.menu-toggle {
+    display: none;
+}
+
+/* Common logo sizing */
+.mobile-nav .logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 
 
 
 @media (max-width: 375px) {
-    .desktop-nav{
+    .desktop-nav {
         display: none;
     }
 
-    .mobile-nav{
+    .mobile-nav {
         display: flex;
     }
 
-    .container .textile-bg .navbar .mobile-nav img{
-        width: 40px;
-        height: 40px;
-        margin: 10px;
+}
+
+@media (max-width: 414px) {
+    .desktop-nav {
+        display: none;
     }
 
-    .container .textile-bg .navbar .mobile-nav .drop-down{
-        height: 220px;
+    .mobile-nav {
         display: flex;
-        flex-direction: column;
-        align-items: end;
-        width: 265px;
     }
 
-    .drop-down .drop-toggle{
-        width: 40px;
-        height: 40px;
-        margin: 10px;
-        background-color: rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 430px) {
+    .desktop-nav {
+        display: none;
     }
-    
-    .drop-down .mobile-dropdown-menu {
-        background-color: #fff;
-        width: 150px;
-        height: 150px;
+
+    .mobile-nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 5px;
-        padding: 10px;
     }
 
-    .drop-down .mobile-dropdown-menu li{
-        padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
     }
 
-    .drop-down .mobile-dropdown-menu li a {
-        text-decoration: none;
+    .mobile-nav {
+        display: flex;
     }
 
+}
+
+@media (max-width: 820px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+}
+
+@media (max-width: 912px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
 
 }
 
@@ -283,8 +329,18 @@ hr {
 .rack-header {
     margin-bottom: 40px;
 }
-.rack-header span { font-size: 0.8rem; color: #a39c93; font-weight: 500;}
-.rack-header p { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-top: 5px; }
+
+.rack-header span {
+    font-size: 0.8rem;
+    color: #a39c93;
+    font-weight: 500;
+}
+
+.rack-header p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
 
 .fabric-index-list {
     list-style: none;
@@ -346,9 +402,9 @@ hr {
     position: relative;
     width: 100%;
     max-width: 440px;
-    height: 560px; 
+    height: 560px;
     border-radius: 24px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 30px 70px rgba(43, 41, 39, 0.1);
 }
 
@@ -359,7 +415,7 @@ hr {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transform-origin: bottom center; 
+    transform-origin: bottom center;
     transform: rotate(-65deg);
     transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease;
 }
@@ -370,8 +426,17 @@ hr {
     object-fit: cover;
 }
 
-.carousel-slide.active { opacity: 1; transform: rotate(0deg); z-index: 2; }
-.carousel-slide.exit { opacity: 0; transform: rotate(65deg); z-index: 1; }
+.carousel-slide.active {
+    opacity: 1;
+    transform: rotate(0deg);
+    z-index: 2;
+}
+
+.carousel-slide.exit {
+    opacity: 0;
+    transform: rotate(65deg);
+    z-index: 1;
+}
 
 /* Overlaid Premium Info Card Details */
 .product-details-card {
@@ -390,13 +455,46 @@ hr {
     transition: opacity 0.4s ease;
 }
 
-.product-details-card.fade-out { opacity: 0; }
-.card-header { display: flex; justify-content: space-between; align-items: baseline; }
-.card-header h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; }
-#product-price { font-size: 1rem; font-weight: 500; color: #5c564f; }
-.card-divider { height: 1px; background: rgba(0, 0, 0, 0.06); margin: 12px 0; }
-.made-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #a39c93; margin-bottom: 2px; }
-#product-made { font-size: 0.8rem; line-height: 1.4; color: #5c564f; }
+.product-details-card.fade-out {
+    opacity: 0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+}
+
+#product-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #5c564f;
+}
+
+.card-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 12px 0;
+}
+
+.made-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #a39c93;
+    margin-bottom: 2px;
+}
+
+#product-made {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #5c564f;
+}
 
 /* Right Sidebar - Specifications & Decorative Loop Axis */
 .sidebar-details-panel {
@@ -449,7 +547,9 @@ hr {
 }
 
 @keyframes spinClockwise {
-    100% { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Responsive Fallback: stacks components on smaller tablet/mobile layouts */
@@ -459,8 +559,11 @@ hr {
         height: auto;
         gap: 30px;
     }
-    .sidebar-rack, .sidebar-details-panel {
-        display: none; /* Focus solely on center view for smaller screens */
+
+    .sidebar-rack,
+    .sidebar-details-panel {
+        display: none;
+        /* Focus solely on center view for smaller screens */
     }
 }
 
@@ -591,7 +694,7 @@ form h2 {
     margin-bottom: 30px;
 }
 
-.input-group input, 
+.input-group input,
 .input-group textarea {
     width: 100%;
     padding: 12px 5px;
@@ -613,17 +716,17 @@ form h2 {
     transition: all 0.3s ease;
 }
 
-.input-group input:focus ~ label,
-.input-group input:valid ~ label,
-.input-group textarea:focus ~ label,
-.input-group textarea:valid ~ label {
+.input-group input:focus~label,
+.input-group input:valid~label,
+.input-group textarea:focus~label,
+.input-group textarea:valid~label {
     top: -3px;
     font-size: 0.85rem;
     color: var(--primary);
     font-weight: 600;
 }
 
-.input-group input:focus, 
+.input-group input:focus,
 .input-group textarea:focus {
     border-bottom-color: var(--primary);
     margin-top: 10px;
@@ -720,7 +823,7 @@ button[type="submit"]:hover {
 }
 
 .hidden {
-    display: none ;
+    display: none;
 }
 
 @keyframes fadeIn {
@@ -751,7 +854,7 @@ button[type="submit"]:hover {
 }
 
 
-footer{
+footer {
     width: 100%;
     margin-top: 50px;
     padding-top: 50px;
@@ -762,7 +865,3 @@ footer{
     background-color: #5442e6;
     justify-content: center;
 }
-
-
-
- 

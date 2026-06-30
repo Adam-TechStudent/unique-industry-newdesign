@@ -1,48 +1,20 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // ✅ FORCE close menu on load/resize
-    const menu = document.querySelector('.mobile-dropdown-menu');
-    if (menu) {
-        menu.classList.remove('active'); // Kill any existing active class
-    }
-    
-    const toggleBtn = document.querySelector('.drop-toggle');
-    const menu2 = document.querySelector('.mobile-dropdown-menu');
-    
-    if (toggleBtn && menu2) {
-        toggleBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            menu2.classList.toggle('active');
-        });
-    }
-    
-    // Close on window resize (DevTools fix)
-    window.addEventListener('resize', function() {
-        if (menu2) menu2.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+    const dropToggle = document.querySelector('.drop-toggle');
+    const dropdownMenu = document.querySelector('.mobile-dropdown-menu');
+
+    // Open/Close dropdown on button click
+    dropToggle.addEventListener('click', (event) => {
+        event.stopPropagation();
+        dropdownMenu.classList.toggle('active');
+    });
+
+    // Dismiss dropdown automatically if clicked outside anywhere on screen
+    document.addEventListener('click', (event) => {
+        if (!dropdownMenu.contains(event.target) && event.target !== dropToggle) {
+            dropdownMenu.classList.remove('active');
+        }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -52,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".carousel-slide");
     const indexItems = document.querySelectorAll(".index-item");
     const detailsCard = document.querySelector(".product-details-card");
-    
+
     const nameElem = document.getElementById("product-name");
     const priceElem = document.getElementById("product-price");
     const madeElem = document.getElementById("product-made");
@@ -104,38 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(rotateShowcase, intervalTime);
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const successCard = document.getElementById("successMessage");
@@ -146,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameInput = document.getElementById("name");
     const emailInput = document.getElementById("email");
     const messageInput = document.getElementById("message");
-
 
     // --- 2. Dynamic Input Validation ---
     const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -162,22 +101,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    nameInput.addEventListener("blur", () => checkInput(nameInput, nameInput.value.trim() !== ""));
-    emailInput.addEventListener("blur", () => checkInput(emailInput, isValidEmail(emailInput.value.trim())));
-    messageInput.addEventListener("blur", () => checkInput(messageInput, messageInput.value.trim() !== ""));
+    nameInput.addEventListener("blur", () =>
+        checkInput(nameInput, nameInput.value.trim() !== ""),
+    );
+    emailInput.addEventListener("blur", () =>
+        checkInput(emailInput, isValidEmail(emailInput.value.trim())),
+    );
+    messageInput.addEventListener("blur", () =>
+        checkInput(messageInput, messageInput.value.trim() !== ""),
+    );
 
     // --- 3. AJAX Form submission with Web3Forms API ---
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const isNameValid = checkInput(nameInput, nameInput.value.trim() !== "");
-        const isEmailValid = checkInput(emailInput, isValidEmail(emailInput.value.trim()));
-        const isMessageValid = checkInput(messageInput, messageInput.value.trim() !== "");
+        const isEmailValid = checkInput(
+            emailInput,
+            isValidEmail(emailInput.value.trim()),
+        );
+        const isMessageValid = checkInput(
+            messageInput,
+            messageInput.value.trim() !== "",
+        );
 
         if (isNameValid && isEmailValid && isMessageValid) {
             const formData = new FormData(form);
             const submitBtn = document.getElementById("submitBtn");
-            
+
             // UI Feedback during processing
             submitBtn.disabled = true;
             submitBtn.style.opacity = "0.7";
@@ -187,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const response = await fetch(form.action, {
                     method: "POST",
                     body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    headers: { Accept: "application/json" },
                 });
 
                 // Parse the JSON response from Web3Forms to capture specific messages
@@ -196,18 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok && data.success) {
                     // 1. Alert for successful sending
                     alert("Success! Your message has been sent successfully.");
-                    
+
                     // Clear the input fields so it's ready for a new message
-                    form.reset(); 
-                    
+                    form.reset();
+
                     // REMOVED THE HIDDEN/SHOW LINES FROM HERE
                 } else {
                     // 2. Alert showing the error message returned from the server
-                    alert("Failed: " + (data.message || "Something went wrong. Please try again."));
+                    alert(
+                        "Failed: " +
+                        (data.message || "Something went wrong. Please try again."),
+                    );
                 }
             } catch (error) {
                 // 3. Alert showing network/critical failures
-                alert("Network error: " + error.message + ". Failed to send the message.");
+                alert(
+                    "Network error: " + error.message + ". Failed to send the message.",
+                );
             } finally {
                 // Revert button styling
                 submitBtn.disabled = false;
@@ -217,16 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

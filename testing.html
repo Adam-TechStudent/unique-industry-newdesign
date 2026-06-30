@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Desktop & Mobile Navigation</title>
+    <style>
+        /* --- General Reset & Page Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* --- Global Navbar Container --- */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* Common logo sizing */
+        .logo {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* --- 1. Desktop Navigation Layout --- */
+        .desktop-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .desktop-nav .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .desktop-nav .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        /* Sleek underline hover effect for desktop */
+        .desktop-nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #007bff;
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .desktop-nav .nav-links a:hover {
+            color: #007bff;
+        }
+
+        /* --- 2. Mobile Navigation Layout (Hidden on Desktop) --- */
+        .mobile-nav {
+            display: none; /* Hidden by default */
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            position: relative;
+        }
+
+        .drop-down {
+            position: relative;
+        }
+
+        .drop-toggle {
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #222;
+            line-height: 1;
+        }
+
+        .mobile-dropdown-menu {
+            display: none;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 60px; /* Aligns break-out menu directly under mobile bar */
+            width: 100vw;
+            background-color: #ffffff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 1px solid #eee;
+            list-style: none;
+            z-index: 999;
+        }
+
+        .mobile-dropdown-menu.active {
+            display: block;
+        }
+
+        .mobile-dropdown-menu li a {
+            display: block;
+            padding: 16px 24px;
+            color: #444;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid #f8f9fa;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-dropdown-menu li a:hover {
+            background-color: #f1f3f5;
+            color: #007bff;
+        }
+
+        /* Hiding the extra placeholder menu-toggle */
+        .menu-toggle {
+            display: none;
+        }
+
+        /* --- Main Content Section --- */
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* --- RESPONSIVE BREAKPOINT (max-width: 375px) --- */
+        @media screen and (max-width: 375px) {
+            /* Hide the desktop layout entirely */
+            .desktop-nav {
+                display: none;
+            }
+
+            /* Reveal the mobile layout */
+            .mobile-nav {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="desktop-nav">
+            <img src="https://via.placeholder.com/150x40?text=Unique+Industry" alt="unique industry logo" class="logo" />
+
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about/index.html">About</a></li>
+                <li><a href="/product/index.html">Product</a></li>
+                <li><a href="/contact/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="mobile-nav">
+            <img src="https://via.placeholder.com/150x40?text=Unique+Industry" alt="unique industry logo" class="logo" />
+
+            <div class="drop-down">
+                <button class="drop-toggle">☰</button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about/index.html">About</a></li>
+                    <li><a href="/product/index.html">Product</a></li>
+                    <li><a href="/contact/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <main class="content">
+        <h1>Welcome to Unique Industry</h1>
+        <p>Resize your browser or check this on a desktop display to view the clean, horizontal layout. When you shrink the screen viewport width down to <strong>375px</strong> or narrower, the desktop bar instantly vanishes, rendering the compact mobile toggle version instead.</p>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropToggle = document.querySelector('.drop-toggle');
+            const dropdownMenu = document.querySelector('.mobile-dropdown-menu');
+
+            // Open/Close dropdown on button click
+            dropToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                dropdownMenu.classList.toggle('active');
+            });
+
+            // Dismiss dropdown automatically if clicked outside anywhere on screen
+            document.addEventListener('click', (event) => {
+                if (!dropdownMenu.contains(event.target) && event.target !== dropToggle) {
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
