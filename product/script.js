@@ -11,46 +11,46 @@ let currentBasePrice = 0;
 
 // Sample dataset with 9 items spanning your requested categories
 const products = [
-    { id: 1, name: "Summer Linen Shirt", price: "$49.99", category: "linen" , img: "/assests/textile17.jpg"},
+    { id: 1, name: "Summer Linen Shirt", price: "$49.99", category: "linen", img: "/assests/textile17.jpg" },
     { id: 2, name: "Classic Cotton Tee", price: "$24.99", category: "cotton", img: "/assests/textile1.jpg" },
-    { id: 3, name: "Cozy Wool Sweater", price: "$89.99", category: "wool" , img: "/assests/textile2.jpg" },
-    { id: 4, name: "Elegant Silk Scarf", price: "$39.99", category: "silk" , img: "/assests/textile3.jpg" },
-    { id: 5, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim" , img: "/assests/textile4.jpg" },
-    { id: 6, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser" , img: "/assests/textile5.jpg" },
-    { id: 7, name: "Linen Blend Trousers", price: "$54.99", category: "linen" , img: "/assests/textile6.jpg" },
-    { id: 8, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile7.jpg" },
-    { id: 9, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile8.jpg" },
-    { id: 10, name: "Summer Linen Shirt", price: "$49.99", category: "linen" , img: "/assests/textile9.jpg" },
-    { id: 11, name: "Classic Cotton Tee", price: "$24.99", category: "cotton" , img: "/assests/textile10.jpg" },
-    { id: 12, name: "Cozy Wool Sweater", price: "$89.99", category: "wool" , img: "/assests/textile11.jpg" },
-    { id: 13, name: "Elegant Silk Scarf", price: "$39.99", category: "silk" , img: "/assests/textile12.jpg" },
-    { id: 14, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim" , img: "/assests/textile13.jpg"},
-    { id: 15, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser" , img: "/assests/textile14.jpg"},
-    { id: 16, name: "Linen Blend Trousers", price: "$54.99", category: "linen" , img: "/assests/textile15.jpg"},
-    { id: 17, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile16.jpg"},
-    { id: 18, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile17.jpg"},
-    { id: 19, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile18.jpg"},
-    { id: 20, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile19.jpg"},
-    { id: 21, name: "Summer Linen Shirt", price: "$49.99", category: "linen" , img: "/assests/textile20.jpg"},
-    { id: 22, name: "Classic Cotton Tee", price: "$24.99", category: "cotton" , img: "/assests/textile21.jpg"},
-    { id: 23, name: "Cozy Wool Sweater", price: "$89.99", category: "wool" , img: "/assests/textile22.jpg"},
-    { id: 24, name: "Elegant Silk Scarf", price: "$39.99", category: "silk" , img: "/assests/textile23.jpg"},
-    { id: 25, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim" , img: "/assests/textile17.jpg"},
-    { id: 26, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser" , img: "/assests/textile1.jpg"},
-    { id: 27, name: "Linen Blend Trousers", price: "$54.99", category: "linen" , img: "/assests/textile2.jpg"},
-    { id: 28, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile3.jpg"},
-    { id: 29, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile4.jpg"},
-    { id: 30, name: "Summer Linen Shirt", price: "$49.99", category: "linen" , img: "/assests/textile5.jpg"},
-    { id: 31, name: "Classic Cotton Tee", price: "$24.99", category: "cotton" , img: "/assests/textile6.jpg"},
-    { id: 32, name: "Cozy Wool Sweater", price: "$89.99", category: "wool" , img: "/assests/textile7.jpg"},
-    { id: 33, name: "Elegant Silk Scarf", price: "$39.99", category: "silk" , img: "/assests/textile8.jpg"},
-    { id: 34, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim" , img: "/assests/textile9.jpg"},
-    { id: 35, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser" , img: "/assests/textile10.jpg"},
-    { id: 36, name: "Linen Blend Trousers", price: "$54.99", category: "linen" , img: "/assests/textile11.jpg"},
-    { id: 37, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile12.jpg"},
-    { id: 38, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile13.jpg"},
-    { id: 39, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton" , img: "/assests/textile14.jpg"},
-    { id: 40, name: "Denim Jacket", price: "$79.99", category: "denim" , img: "/assests/textile15.jpg"}
+    { id: 3, name: "Cozy Wool Sweater", price: "$89.99", category: "wool", img: "/assests/textile2.jpg" },
+    { id: 4, name: "Elegant Silk Scarf", price: "$39.99", category: "silk", img: "/assests/textile3.jpg" },
+    { id: 5, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim", img: "/assests/textile4.jpg" },
+    { id: 6, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser", img: "/assests/textile5.jpg" },
+    { id: 7, name: "Linen Blend Trousers", price: "$54.99", category: "linen", img: "/assests/textile6.jpg" },
+    { id: 8, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile7.jpg" },
+    { id: 9, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile8.jpg" },
+    { id: 10, name: "Summer Linen Shirt", price: "$49.99", category: "linen", img: "/assests/textile9.jpg" },
+    { id: 11, name: "Classic Cotton Tee", price: "$24.99", category: "cotton", img: "/assests/textile10.jpg" },
+    { id: 12, name: "Cozy Wool Sweater", price: "$89.99", category: "wool", img: "/assests/textile11.jpg" },
+    { id: 13, name: "Elegant Silk Scarf", price: "$39.99", category: "silk", img: "/assests/textile12.jpg" },
+    { id: 14, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim", img: "/assests/textile13.jpg" },
+    { id: 15, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser", img: "/assests/textile14.jpg" },
+    { id: 16, name: "Linen Blend Trousers", price: "$54.99", category: "linen", img: "/assests/textile15.jpg" },
+    { id: 17, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile16.jpg" },
+    { id: 18, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile17.jpg" },
+    { id: 19, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile18.jpg" },
+    { id: 20, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile19.jpg" },
+    { id: 21, name: "Summer Linen Shirt", price: "$49.99", category: "linen", img: "/assests/textile20.jpg" },
+    { id: 22, name: "Classic Cotton Tee", price: "$24.99", category: "cotton", img: "/assests/textile21.jpg" },
+    { id: 23, name: "Cozy Wool Sweater", price: "$89.99", category: "wool", img: "/assests/textile22.jpg" },
+    { id: 24, name: "Elegant Silk Scarf", price: "$39.99", category: "silk", img: "/assests/textile23.jpg" },
+    { id: 25, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim", img: "/assests/textile17.jpg" },
+    { id: 26, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser", img: "/assests/textile1.jpg" },
+    { id: 27, name: "Linen Blend Trousers", price: "$54.99", category: "linen", img: "/assests/textile2.jpg" },
+    { id: 28, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile3.jpg" },
+    { id: 29, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile4.jpg" },
+    { id: 30, name: "Summer Linen Shirt", price: "$49.99", category: "linen", img: "/assests/textile5.jpg" },
+    { id: 31, name: "Classic Cotton Tee", price: "$24.99", category: "cotton", img: "/assests/textile6.jpg" },
+    { id: 32, name: "Cozy Wool Sweater", price: "$89.99", category: "wool", img: "/assests/textile7.jpg" },
+    { id: 33, name: "Elegant Silk Scarf", price: "$39.99", category: "silk", img: "/assests/textile8.jpg" },
+    { id: 34, name: "Slim Fit Denim Jeans", price: "$59.99", category: "denim", img: "/assests/textile9.jpg" },
+    { id: 35, name: "Formal Khaki Trouser", price: "$45.00", category: "trouser", img: "/assests/textile10.jpg" },
+    { id: 36, name: "Linen Blend Trousers", price: "$54.99", category: "linen", img: "/assests/textile11.jpg" },
+    { id: 37, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile12.jpg" },
+    { id: 38, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile13.jpg" },
+    { id: 39, name: "Premium Cotton Hoodie", price: "$64.99", category: "cotton", img: "/assests/textile14.jpg" },
+    { id: 40, name: "Denim Jacket", price: "$79.99", category: "denim", img: "/assests/textile15.jpg" }
 ];
 
 const container = document.getElementById('products-container');
@@ -93,6 +93,9 @@ function filterCategory(category, buttonElement) {
         const filtered = products.filter(p => p.category === category);
         renderProducts(filtered);
     }
+
+    // Auto scroll main content area back to the top when swapping categories on mobile
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 3. Modal Controllers

@@ -28,6 +28,7 @@
             flex-direction: column;
             position: fixed;
             height: 100vh;
+            z-index: 100;
         }
 
         .sidebar h2 {
@@ -49,6 +50,7 @@
             transition: all 0.3s ease;
             width: 100%;
             border-left: 4px solid transparent;
+            white-space: nowrap;
         }
 
         .sidebar button:hover {
@@ -68,6 +70,7 @@
             margin-left: 250px;
             padding: 40px;
             flex-grow: 1;
+            width: calc(100% - 250px);
         }
 
         .main-content h1 {
@@ -78,7 +81,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
         }
 
@@ -142,19 +145,91 @@
             background-color: #1d4ed8;
         }
 
-        /* Responsive Fix */
+        /* Responsive Fix Mobile & Tablets */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
             }
+            
             .sidebar {
                 width: 100%;
                 height: auto;
-                position: relative;
+                position: fixed;
+                top: 0;
+                left: 0;
+                padding: 10px 0 0 0;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Hide scrollbar for Firefox */
             }
+            
+            .sidebar::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for Chrome/Safari */
+            }
+
+            .sidebar h2 {
+                display: none; /* Hide 'Catalog' heading on mobile to save space */
+            }
+
+            .sidebar button {
+                padding: 15px 20px;
+                text-align: center;
+                width: auto;
+                border-left: none;
+                border-bottom: 4px solid transparent;
+            }
+
+            .sidebar button.active {
+                border-left-color: transparent;
+                border-bottom-color: #38bdf8;
+            }
+
             .main-content {
                 margin-left: 0;
+                margin-top: 55px; /* Pushes content down so sidebar header doesn't overlap */
                 padding: 20px;
+                width: 100%;
+            }
+
+            .main-content h1 {
+                font-size: 1.75rem;
+                margin-bottom: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* 2 columns on small screens */
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 12px;
+            }
+            
+            .card-img-placeholder {
+                height: 130px;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+            
+            .card .price {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            
+            .order-btn {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Minor adjustment for tiny screens */
+        @media (max-width: 360px) {
+            .products-grid {
+                grid-template-columns: 1fr; /* Single column on exceptionally small devices */
             }
         }
     </style>
@@ -178,7 +253,6 @@
     </div>
 
     <script>
-        // Sample dataset with 9 items spanning your requested categories
         const products = [
             { id: 1, name: "Summer Linen Shirt", price: "$49.99", category: "linen" },
             { id: 2, name: "Classic Cotton Tee", price: "$24.99", category: "cotton" },
@@ -225,9 +299,8 @@
         const container = document.getElementById('products-container');
         const title = document.getElementById('category-title');
 
-        // Function to render cards dynamically
         function renderProducts(filteredList) {
-            container.innerHTML = ""; // Clear existing cards
+            container.innerHTML = ""; 
             
             filteredList.forEach(product => {
                 const card = document.createElement('div');
@@ -242,31 +315,28 @@
             });
         }
 
-        // Function to filter categories when sidebar button is clicked
         function filterCategory(category, buttonElement) {
-            // Update Active Class on Sidebar buttons
             const buttons = document.querySelectorAll('.menu-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             buttonElement.classList.add('active');
 
-            // Update Title Text
             title.textContent = category === 'all' ? 'All Products' : category;
 
-            // Filter data logic
             if (category === 'all') {
                 renderProducts(products);
             } else {
                 const filtered = products.filter(p => p.category === category);
                 renderProducts(filtered);
             }
+            
+            // Auto scroll main content area back to the top when swapping categories on mobile
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Simple alert placeholder for Order button
         function placeOrder(productName) {
             alert(`Thank you! Your order for "${productName}" has been received.`);
         }
 
-        // Initial Load to show all products on startup
         renderProducts(products);
     </script>
 </body>
